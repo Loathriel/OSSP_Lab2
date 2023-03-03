@@ -1,0 +1,101 @@
+2023-03-03 21:32:37
+Program launched
+
+================================
+
+2023-03-03 21:32:40
+Called action: Scan for files
+Result: 
+2 files found
+
+================================
+
+2023-03-03 21:32:44
+Called action: Show file names
+Result: 
+another.dat
+data.dat
+
+================================
+
+2023-03-03 21:32:46
+Called action: Show full path of files
+Result: 
+D:\My_repos\с#\OSSP_Lab2\Released Program\another.dat
+D:\My_repos\с#\OSSP_Lab2\Released Program\problem\data.dat
+
+================================
+
+2023-03-03 21:32:48
+Called action: Show info about files
+Result: 
+File name: another.dat
+File extension: .dat
+Location on disc: D:\My_repos\с#\OSSP_Lab2\Released Program
+Size in bytes: 29
+Created: 2023-03-03 21:32:04
+Last opened: 2023-03-03 21:32:36
+Last changed: 2023-03-03 21:32:25
+Is read only: False
+Is hidden: False
+
+File name: data.dat
+File extension: .dat
+Location on disc: D:\My_repos\с#\OSSP_Lab2\Released Program\problem
+Size in bytes: 38
+Created: 2023-03-03 19:17:14
+Last opened: 2023-03-03 21:31:36
+Last changed: 2023-03-03 21:29:52
+Is read only: False
+Is hidden: False
+
+
+================================
+
+2023-03-03 21:32:59
+Called action: Show text from chosen file
+Result: 
+File contents shown
+
+================================
+
+2023-03-03 21:33:02
+Called action: Show text from chosen file
+Result: 
+File contents shown
+
+================================
+
+2023-03-03 21:33:09
+Called action: Count sum of numbers in chosen file
+Result: 
+D:\My_repos\с#\OSSP_Lab2\Released Program\another.dat : -0,79999995; Replaced 4 symbols
+D:\My_repos\с#\OSSP_Lab2\Released Program\problem\data.dat : 140,83; Replaced 2 symbols
+
+================================
+
+2023-03-03 21:33:47
+Called action: Scan for files
+Result: 
+2 files found
+
+================================
+
+2023-03-03 21:33:49
+Called action: Count sum of numbers in chosen file
+Result: 
+D:\My_repos\с#\OSSP_Lab2\Released Program\another.dat : -0,79999995; Replaced 4 symbols
+D:\My_repos\с#\OSSP_Lab2\Released Program\problem\data.dat : 140,83; Replaced 3 symbols
+
+================================
+
+2023-03-03 21:35:34
+Called action: Clear console screan
+
+================================
+
+2023-03-03 21:35:35
+Called action: Exit the program
+
+================================
+

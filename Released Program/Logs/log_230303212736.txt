@@ -1,0 +1,71 @@
+2023-03-03 21:27:36
+Program launched
+
+================================
+
+2023-03-03 21:27:37
+Called action: Scan for files
+Result: 
+1 files found
+
+================================
+
+2023-03-03 21:27:40
+Called action: Show file names
+Result: 
+data.dat
+
+================================
+
+2023-03-03 21:27:42
+Called action: Show full path of files
+Result: 
+D:\My_repos\с#\OSSP_Lab2\bin\Debug\net6.0\problem\data.dat
+
+================================
+
+2023-03-03 21:27:44
+Called action: Show info about files
+Result: 
+File name: data.dat
+File extension: .dat
+Location on disc: D:\My_repos\с#\OSSP_Lab2\bin\Debug\net6.0\problem
+Size in bytes: 12
+Created: 2023-03-03 19:17:14
+Last opened: 2023-03-03 20:43:06
+Last changed: 2023-03-03 20:41:22
+Is read only: False
+Is hidden: False
+
+
+================================
+
+2023-03-03 21:27:52
+Called action: Show text from chosen file
+Result: 
+File contents shown
+
+================================
+
+2023-03-03 21:28:04
+Called action: Count sum of numbers in chosen file
+Result: 
+D:\My_repos\с#\OSSP_Lab2\bin\Debug\net6.0\problem\data.dat : 45,5; Replaced 0 symbols
+
+================================
+
+2023-03-03 21:28:11
+Called action: Clear console screan
+
+================================
+
+2023-03-03 21:28:12
+Called action: Send help message
+
+================================
+
+2023-03-03 21:28:16
+Called action: Exit the program
+
+================================
+
