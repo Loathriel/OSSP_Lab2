@@ -2,6 +2,7 @@
 {
     internal class Actions
     {
+        // Dictionary used for action names in log
         public static readonly Dictionary<int, string> actionNames = new Dictionary<int, string>
         {
             {0, "Wrong action used" },
@@ -15,6 +16,9 @@
             {8, "Send help message" },
             {9, "Exit the program" }
         };
+
+        // Searches the working directory for .dat files
+        // Writes to console and log how many did it find
         public static string[] SearchFiles(out string[] files)
         {
             files = FileScanner.SearchForFiles();
@@ -23,6 +27,7 @@
             return resultOfAction;
         }
 
+        // Writes only the names of files to console and log
         public static string[] ShowFileNames(string[] files)
         {
             var resultOfAction = new string[files.Length];
@@ -35,6 +40,7 @@
             return resultOfAction;
         }
 
+        // Writes full paths, including names, of files to console and log
         public static string[] ShowFullPaths(string[] files)
         {
             var resultOfAction = new string[files.Length];
@@ -47,16 +53,14 @@
             return resultOfAction;
         }
 
+        // Writes information about files to console and log
         public static string[] ShowFilesInfo(string[] files)
         {
             var resultOfAction = new string[files.Length];
             for (int i = 0; i < files.Length; ++i)
             {
                 var fileName = files[i];
-                if (File.Exists(fileName) == false)
-                    resultOfAction[i] = $"File {fileName} doesn't exist anymore";
-                else
-                    resultOfAction[i] = FileScanner.GetFileInfo(fileName);
+                resultOfAction[i] = FileScanner.GetFileInfo(fileName);
                 Console.Write($"{i + 1}. ");
                 Console.WriteLine(resultOfAction[i]);
                 Console.WriteLine();
@@ -64,6 +68,9 @@
             return resultOfAction;
         }
 
+        // Prompts user to pick a file and writes its contents to 
+        // console and log, if there weren't any errors
+        // (Wrong input or file doesn't exist)
         public static string[] ShowTextFromFile(string[] files)
         {
             Console.WriteLine("Type number of filename to read its content: ");
@@ -89,6 +96,7 @@
             return new string[] { "File contents shown" };
         }
 
+        // Writes the name and sum for all files to console and log
         public static string[] SumNumbersInFiles(string[] files)
         {
             Console.WriteLine("Type number to use as default value for bad readings: ");
@@ -111,12 +119,14 @@
             return resultOfAction;
         }
 
+        // Clears the console window and prints help
         public static void ClearScrean()
         {
             Console.Clear();
             PrintHelp();
         }
 
+        // Writes help message to console
         public static void PrintHelp()
         {
             Console.WriteLine("Type number of action you want to use and press enter afterwards");
@@ -131,8 +141,13 @@
             Console.WriteLine("9 - Close the program");
         }
 
+        // support function to sum all numbers in file
+        // replaces bad inputs with defaultValue
+        // informs the user in console when does so
+        // also includes the number of times it replaced a value when providing result
         private static string sumNumbersInFile(string fileName, float defaultVaule)
         {
+            int timesReplaced = 0;
             float sum = 0;
             var contents = File.ReadAllText(fileName).Split(new char[] { ' ', '\n', ';' });
             foreach (string line in contents)
@@ -143,11 +158,12 @@
                 {
                     Console.WriteLine($"Replaced {line} with {defaultVaule}");
                     value = defaultVaule;
+                    ++timesReplaced;
                 }
                 sum += value;
             }
 
-            return $"{fileName} : {sum}";
+            return $"{fileName} : {sum}; Replaced {timesReplaced} symbols";
         }
     }
 }

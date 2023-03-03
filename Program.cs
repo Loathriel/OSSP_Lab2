@@ -2,17 +2,15 @@
 {
     internal class Program
     {
-        private static string[] StartProgram()
-        {
-            Logger.Start();
-            Console.OutputEncoding = System.Text.Encoding.Unicode;
-            Actions.PrintHelp();
-            return FileScanner.SearchForFiles();
-        }
+        // Main function
+        // Only loop to use program constatly
+        // And files variable to store path to files
         static void Main(string[] args)
         {
+            Logger.Start();
+            Actions.PrintHelp();
             bool keepLooping = true;
-            string[] files = StartProgram();
+            string[] files = FileScanner.SearchForFiles();
             while (keepLooping)
             {
                 string[] resultOfAction = Array.Empty<string>();

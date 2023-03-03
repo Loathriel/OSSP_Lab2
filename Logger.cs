@@ -5,6 +5,7 @@
         private static readonly string fileName = "Logs\\log_" + DateTime.Now.ToString("yyMMddHHmmss") + ".txt";
         private static Logger? Instance;
 
+        // Used to maintain only one instance of logger (singleton pattern)
         private Logger() 
         {
             if (Directory.Exists("Logs") == false)
@@ -13,6 +14,7 @@
                 sw.WriteLog("Program launched\r\n");
         }
 
+        // Writes datetime, actionName and its results to the log file
         public static void LogActions(string actionName, string[] results)
         {
             var logText = new System.Text.StringBuilder();
@@ -28,6 +30,7 @@
                 sw.WriteLog(logText.ToString());
         }
 
+        // Ensures the logger is started and will remain single
         public static void Start() 
         {
             if (Instance == null)

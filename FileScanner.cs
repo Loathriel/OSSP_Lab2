@@ -2,10 +2,13 @@
 {
     internal class FileScanner
     {
-        private static readonly string workingPath = Directory.GetCurrentDirectory();
+        private static readonly string workingPath = Directory.GetCurrentDirectory(); // variable with full path to working folder
 
+        // Set default values for the task
         public static string[] SearchForFiles(string extension = "*.dat") => SearchForFiles(extension, new string[] { "problem" });
 
+        // Actual function that searches the working folder, as well as all subpaths provided
+        // for files with given extension
         public static string[] SearchForFiles(string extension, string[] subpaths)
         {
             var foundFiles = Directory.EnumerateFiles(workingPath, extension);
@@ -21,9 +24,14 @@
             
             return foundFiles.ToArray();
         }
+
+        // Creates a string containing all info about a file
         public static string GetFileInfo(string fileName)
         {
             const string timeFormat = "yyyy-MM-dd HH:mm:ss";
+
+            if (File.Exists(fileName) == false)
+                return $"File {fileName} doesn't exist anymore";
 
             var fileInfo = new FileInfo(fileName);
             var fileInfoInText = new System.Text.StringBuilder();
